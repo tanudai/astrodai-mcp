@@ -1,0 +1,18 @@
+# Smithery configuration file
+# https://smithery.ai/docs/config#connecting-an-existing-remote-server
+name: astrodai
+displayName: Astrodai Vedic Astrology & Ephemeris
+description: "Precision-computed Vedic astrology calculations, birth-time sensitivity checks, and Vimshottari dasha timing calibrated to Swiss Ephemeris and Windows Jagannatha Hora (JHora) desktop accuracy."
+repository: https://github.com/tanudai/astrodai-mcp
+website: https://astrodai.com
+startCommand:
+  type: http
+  url: "https://astrodai.com/mcp"
+tags:
+  - astrology
+  - vedic-astrology
+  - astronomy
+  - ephemeris
+  - kundli
+  - swiss-ephemeris
+  - dasha-timing

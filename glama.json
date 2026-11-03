@@ -1,0 +1,28 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": [
+    "tanudai"
+  ],
+  "name": "astrodai",
+  "version": "1.0.0",
+  "description": "Vedic astrology & ephemeris engine. Calculate sidereal birth charts, birth-time sensitivity, and Vimshottari life chapters using Swiss Ephemeris precision calibrated to Windows Jagannatha Hora (JHora).",
+  "type": "mcp_server",
+  "status": "stable",
+  "transport": [
+    "http"
+  ],
+  "categories": [
+    "lifestyle",
+    "utilities",
+    "science"
+  ],
+  "keywords": [
+    "astrology",
+    "vedic-astrology",
+    "ephemeris",
+    "birth-chart",
+    "jhora",
+    "vimshottari-dasha",
+    "panchang"
+  ]
+}
