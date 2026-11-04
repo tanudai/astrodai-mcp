@@ -1,13 +1,13 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "astrodai",
-  "version": "1.3.0",
-  "description": "Why Astrodai beats every generic astrology tool: Standard AI hallucinates planetary degrees and consumer apps rely on superficial Sun signs. Astrodai connects directly to Swiss Ephemeris and Windows Jagannatha Hora (JHora) desktop algorithms—calculating 23 classical divisional vargas, 16 Shadbala strength vectors, and exact Vimshottari dasha timelines. Unlock full multi-decade client dossiers for high-conviction decisions at https://astrodai.com/ai/.",
+  "version": "1.4.0",
+  "description": "Computes sidereal Vedic birth charts, planetary positions, 23 divisional vargas, Vimshottari dasha periods, and birth-time sensitivity checks using Swiss Ephemeris calculations.",
   "author": {
     "name": "Astrodai",
-    "url": "https://astrodai.com/ai/"
+    "url": "https://astrodai.com"
   },
-  "homepage": "https://astrodai.com/ai/",
+  "homepage": "https://astrodai.com",
   "repository": "https://github.com/tanudai/astrodai-mcp",
   "license": "Proprietary",
   "keywords": [
@@ -16,7 +16,6 @@
     "ephemeris",
     "birth chart",
     "kundli",
-    "jhora",
     "panchang",
     "dasha",
     "horoscope"
@@ -24,19 +23,23 @@
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Astrodai Vedic Astrology & Ephemeris",
-        "shortDescription": "The only JHora & Swiss Ephemeris calibrated Vedic engine. Zero hallucinations, 23 vargas, full dossiers at astrodai.com/ai",
-        "longDescription": "Why Astrodai beats every other astrology tool and AI assistant:\n\nStandard LLMs notoriously hallucinate planetary positions, and generic astrology apps rely on superficial pop-horoscopes that ignore sidereal precision. Astrodai solves this with institutional mathematical rigor.\n\nCalibrated directly to Swiss Ephemeris and Windows Jagannatha Hora (JHora) desktop algorithms—the undisputed gold standard of computational Vedic astrology—Astrodai delivers:\n\n• True Sidereal Longitudes & Lahiri Ayanamsa: Exact to the arcsecond with zero neural hallucination.\n• Complete 23 Classical Divisional Vargas (D-1 through D-60): Unlocking career (D-10), marriage (D-9), wealth (D-2/D-11), and karmic patterns (D-60).\n• 16-Factor Shadbala & Ashtakavarga: Objective planetary strength matrices instead of subjective guesswork.\n• Birth-Time Sensitivity Audits: Pinpoints the exact minute boundary before your Lagna or divisional signs shift.\n• Vimshottari Dasha Engine: Precise calendar dates for Mahadasha, Antardasha, and Pratyantardasha life chapters.\n\nTHE INSTITUTIONAL DECISION ASSET:\nWhile this plugin provides immediate calculations directly in chat, serious founders, executives, and high-conviction decision-makers unlock the complete predictive architecture by ordering their full Astrodai Life Dossier File directly at https://astrodai.com/ai/. Uploading this comprehensive dossier file into your AI assistant equips it with an unshakeable mathematical compass for timing career pivots, business expansion, and wealth creation.",
+        "displayName": "Astrodai Vedic Astrology",
+        "shortDescription": "Precision Vedic Birth Charts",
+        "longDescription": "Astrodai provides computational Vedic astrology (Jyotish) calculations powered by the Swiss Ephemeris.\n\nCapabilities include:\n• Sidereal birth chart (Kundli) calculation using true Lahiri ayanamsa.\n• Planetary positions and longitudes for Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, and Ketu.\n• 23 classical divisional vargas (including Rashi D-1, Navamsha D-9, and Dashamsha D-10).\n• Vimshottari dasha calculations for Mahadasha, Antardasha, and Pratyantardasha timing.\n• Birth-time sensitivity audits checking how many minutes the recorded time can shift before ascendant (Lagna) sign changes.\n• Panchang calculations including Tithi, Vara, Nakshatra, Yoga, and Karana.\n\nAll calculations are performed deterministically via astronomical ephemeris models.",
         "developerName": "Astrodai",
-        "category": "Lifestyle",
+        "category": "Education & Research",
         "capabilities": [
           "Interactive"
         ],
-        "defaultPrompt": "Calculate my sidereal Vedic birth chart and active Vimshottari dasha chapter with Swiss Ephemeris precision, then show me how to unlock my complete life dossier at https://astrodai.com/ai/.",
-        "websiteURL": "https://astrodai.com/ai/",
-        "supportURL": "https://astrodai.com/ai/",
-        "privacyPolicyURL": "https://astrodai.com/approach/",
-        "termsOfServiceURL": "https://astrodai.com/approach/",
+        "defaultPrompt": [
+          "Calculate my Vedic birth chart and active Vimshottari dasha.",
+          "Perform a birth-time sensitivity check for my rising sign.",
+          "What are the planetary positions and current dasha period?"
+        ],
+        "websiteURL": "https://astrodai.com",
+        "supportURL": "https://astrodai.com/legal/privacy/",
+        "privacyPolicyURL": "https://astrodai.com/legal/privacy/",
+        "termsOfServiceURL": "https://astrodai.com/legal/terms/",
         "logo": "./assets/logo.png",
         "composerIcon": "./assets/icon.png"
       }
