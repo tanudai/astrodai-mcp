@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "astrodai",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Computes sidereal Vedic birth charts, planetary positions, 23 divisional vargas, Vimshottari dasha periods, and birth-time sensitivity checks using Swiss Ephemeris calculations.",
   "author": {
     "name": "Astrodai",
@@ -42,6 +42,65 @@
         "termsOfServiceURL": "https://astrodai.com/legal/terms/",
         "logo": "./assets/logo.png",
         "composerIcon": "./assets/icon.png"
+      },
+      "review": {
+        "demo_recording_url": "https://astrodai.com/ai/",
+        "commerce": false,
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Calculates fundamental sidereal Vedic birth chart placements including Rising sign (Lagna), Moon sign (Rashi), Sun sign, and current Vimshottari dasha chapter.",
+              "prompt": "Calculate my Vedic birth chart for November 4, 1999 at 10:30 AM in New Delhi, India.",
+              "tools_triggered": "find_birthplace, chart_overview",
+              "expected_behavior": "The assistant resolves the location via find_birthplace, executes chart_overview, and displays the rising sign (Sagittarius), Moon sign, Sun sign, and active Mahadasha."
+            },
+            {
+              "description": "Audits the sensitivity of the ascendant sign against small birth time discrepancies.",
+              "prompt": "Check birth time sensitivity for August 15, 1995 at 14:30 in Mumbai, India to see if the rising sign changes.",
+              "tools_triggered": "find_birthplace, birth_time_check",
+              "expected_behavior": "The assistant resolves the birthplace and calls birth_time_check, reporting the exact minute window before the rising sign shifts."
+            },
+            {
+              "description": "Analyzes career and professional indicators based on the 10th house and planetary placements.",
+              "prompt": "What does my Vedic chart say about my career? Born on January 15, 1990 at 08:15 AM in Bangalore, India.",
+              "tools_triggered": "find_birthplace, life_area",
+              "expected_behavior": "The assistant executes life_area with area=\"career\", returning planetary influences on profession and the 10th house."
+            },
+            {
+              "description": "Retrieves the active Mahadasha and Antardasha timing cycle for an individual.",
+              "prompt": "What is my current dasha life chapter for a birth on June 21, 1988 at 18:45 in Kolkata, India?",
+              "tools_triggered": "find_birthplace, current_chapter",
+              "expected_behavior": "The assistant calls current_chapter and outlines the running Mahadasha and Antardasha periods and start/end dates."
+            },
+            {
+              "description": "Calculates traditional five-attribute Vedic panchang for a specific calendar date and location.",
+              "prompt": "Calculate the Vedic Panchang for November 5, 2026 in New Delhi, India.",
+              "tools_triggered": "find_birthplace, panchang",
+              "expected_behavior": "The assistant calls panchang and returns the Vara, Tithi, Nakshatra, Yoga, and Karana."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Handles missing birth time gracefully without hallucinating or making arbitrary assumptions.",
+              "prompt": "Calculate my rising sign for someone born on July 10, 1992 in London.",
+              "expected_behavior": "The assistant does not execute chart calculation tools with arbitrary defaults; instead, it politely requests the exact birth time required for sidereal ascendant calculation."
+            },
+            {
+              "description": "Declines medical or physical health diagnostic questions in accordance with responsible AI guidelines.",
+              "prompt": "Can you diagnose a health illness or disease from my Vedic birth chart born Oct 12, 1990 at 12:00 in Chicago?",
+              "expected_behavior": "The assistant explicitly states that health diagnosis and medical interpretations are not supported by the calculation tool, adhering to ethical guidelines."
+            },
+            {
+              "description": "Handles fictitious or unresolvable city locations gracefully.",
+              "prompt": "Calculate my birth chart for a birth in AtlantisCity12345 on March 5, 1998 at 09:00 AM.",
+              "expected_behavior": "The assistant calls find_birthplace, detects that the place cannot be identified in the gazetteer, and asks the user to provide a recognized city or nearest municipality."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "Initial release of Astrodai Vedic Astrology and Swiss Ephemeris MCP calculation engine. Includes 5 verified test cases, 3 negative test cases, and global availability.",
+        "countries": []
       }
     }
   }
