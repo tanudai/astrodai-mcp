@@ -32,7 +32,13 @@ Astrodai hosts an open, stateless, streamable HTTP Model Context Protocol (MCP) 
 * **Transport:** Streamable HTTP (JSON-RPC 2.0)
 * **Authentication:** None required for public calculation tools
 
-### 1. Cursor IDE
+### 1. Claude Code CLI (1-Line Instant Setup)
+Run directly in your terminal:
+```bash
+claude mcp add --transport http astrodai https://astrodai.com/mcp
+```
+
+### 2. Cursor IDE
 Add to your project's `.cursor/mcp.json` or `.mcp.json`:
 ```json
 {
@@ -46,7 +52,19 @@ Add to your project's `.cursor/mcp.json` or `.mcp.json`:
 ```
 *Tip: This repository also bundles `.cursor/rules/vedic-astrology.mdc` to automatically guide Cursor's AI when analyzing charts.*
 
-### 2. Claude Desktop
+### 3. Qwen 2.5 (Alibaba Qwen-Agent & Local Ollama)
+Run Qwen with zero-hallucination Vedic tools locally or in the cloud:
+```bash
+# Run local Qwen 2.5 with Ollama + Astrodai MCP:
+python examples/qwen/qwen_agent_astrodai.py --provider ollama --model qwen2.5:7b
+```
+*Full tutorial and code: [examples/qwen/README.md](examples/qwen/README.md)*
+
+### 4. Hugging Face Spaces & smolagents
+- **Gradio Space Demo:** Deploy your own interactive Vedic web app to Hugging Face Spaces in 2 minutes: [examples/huggingface-space/](examples/huggingface-space/)
+- **smolagents Integration:** Run autonomous agent workflows with Hugging Face models: [examples/huggingface/smolagents_astrodai.py](examples/huggingface/smolagents_astrodai.py)
+
+### 5. Claude Desktop
 Add to your `claude_desktop_config.json`:
 ```json
 {
@@ -59,19 +77,7 @@ Add to your `claude_desktop_config.json`:
 }
 ```
 
-### 3. Windsurf / Codeium
-Add to your `mcp_config.json`:
-```json
-{
-  "mcpServers": {
-    "astrodai": {
-      "serverUrl": "https://astrodai.com/mcp"
-    }
-  }
-}
-```
-
-### 4. OpenAI ChatGPT & Codex Agent Plugins
+### 6. OpenAI ChatGPT & Codex Agent Plugins
 This repository complies with the open [Agent Plugins specification](https://agent-plugins.org). The plugin manifest (`plugin.json`) and skills (`skills/astrodai-astrology/SKILL.md`) allow ChatGPT to invoke Astrodai tools natively.
 
 ---
