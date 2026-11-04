@@ -4,6 +4,8 @@
   <p><strong>The #1 Institutional Vedic Astrology Engine for AI Assistants & Autonomous Agents</strong></p>
   <p>
     <a href="https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.tanudai/astrodai"><img src="https://img.shields.io/badge/MCP%20Registry-Active-emerald?style=flat-square" alt="MCP Registry" /></a>
+    <a href="https://mcpservers.org/servers/tanudai/astrodai-mcp"><img src="https://mcpservers.org/badge.svg" alt="Listed on mcpservers.org" /></a>
+    <a href="https://huggingface.co/spaces/Torilando1998/astrodai-astrology"><img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-md.svg" alt="Open in Hugging Face Spaces" /></a>
     <a href="https://astrodai.com/mcp"><img src="https://img.shields.io/badge/Transport-Streamable%20HTTP-blue?style=flat-square" alt="Transport" /></a>
     <a href="https://astrodai.com/ai/"><img src="https://img.shields.io/badge/Dossiers-astrodai.com%2Fai-gold?style=flat-square" alt="Astrodai Dossiers" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" /></a>
@@ -61,8 +63,16 @@ python examples/qwen/qwen_agent_astrodai.py --provider ollama --model qwen2.5:7b
 *Full tutorial and code: [examples/qwen/README.md](examples/qwen/README.md)*
 
 ### 4. Hugging Face Spaces & smolagents
-- **Gradio Space Demo:** Deploy your own interactive Vedic web app to Hugging Face Spaces in 2 minutes: [examples/huggingface-space/](examples/huggingface-space/)
-- **smolagents Integration:** Run autonomous agent workflows with Hugging Face models: [examples/huggingface/smolagents_astrodai.py](examples/huggingface/smolagents_astrodai.py)
+- **Live Interactive Web Chatbot (ZeroGPU):** Test your Vedic birth chart, rising sign, and dasha timeline online:  
+  [![Open in Hugging Face Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-md.svg)](https://huggingface.co/spaces/Torilando1998/astrodai-astrology)
+- **1-Line smolagents Python Integration:**
+  ```python
+  from smolagents import load_tool, CodeAgent, HfApiModel
+
+  astrodai_tool = load_tool("Torilando1998/astrodai-astrology", trust_remote_code=True)
+  agent = CodeAgent(tools=[astrodai_tool], model=HfApiModel())
+  agent.run("Calculate the Vedic birth chart for 1995-10-15 at 14:30 in New Delhi")
+  ```
 
 ### 5. Claude Desktop
 Add to your `claude_desktop_config.json`:
