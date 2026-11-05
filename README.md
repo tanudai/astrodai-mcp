@@ -8,6 +8,7 @@
     <a href="https://huggingface.co/spaces/Torilando1998/astrodai-astrology"><img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-md.svg" alt="Open in Hugging Face Spaces" /></a>
     <a href="https://astrodai.com/mcp"><img src="https://img.shields.io/badge/Transport-Streamable%20HTTP-blue?style=flat-square" alt="Transport" /></a>
     <a href="https://astrodai.com/ai/"><img src="https://img.shields.io/badge/Dossiers-astrodai.com%2Fai-gold?style=flat-square" alt="Astrodai Dossiers" /></a>
+    <a href="https://colab.research.google.com/github/tanudai/astrodai-mcp/blob/main/notebooks/Astrodai_Vedic_Ephemeris_Quickstart.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" /></a>
   </p>
 </div>
