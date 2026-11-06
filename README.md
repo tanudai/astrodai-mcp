@@ -4,6 +4,7 @@
   <p><strong>The #1 Institutional Vedic Astrology Engine for AI Assistants & Autonomous Agents</strong></p>
   <p>
     <a href="https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.tanudai/astrodai"><img src="https://img.shields.io/badge/MCP%20Registry-Active-emerald?style=flat-square" alt="MCP Registry" /></a>
+    <a href="https://hub.docker.com/r/tanudai/astrodai-ephemeris"><img src="https://img.shields.io/badge/Docker%20Hub-astrodai--ephemeris-blue?style=flat-square&logo=docker&logoColor=white" alt="Docker Hub" /></a>
     <a href="https://mcpservers.org/servers/tanudai/astrodai-mcp"><img src="https://mcpservers.org/badge.svg" alt="Listed on mcpservers.org" /></a>
     <a href="https://huggingface.co/spaces/Torilando1998/astrodai-astrology"><img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-md.svg" alt="Open in Hugging Face Spaces" /></a>
     <a href="https://astrodai.com/mcp"><img src="https://img.shields.io/badge/Transport-Streamable%20HTTP-blue?style=flat-square" alt="Transport" /></a>
@@ -90,6 +91,21 @@ Add to your `claude_desktop_config.json`:
 
 ### 6. OpenAI ChatGPT & Codex Agent Plugins
 This repository complies with the open [Agent Plugins specification](https://agent-plugins.org). The plugin manifest (`plugin.json`) and skills (`skills/astrodai-astrology/SKILL.md`) allow ChatGPT to invoke Astrodai tools natively.
+
+### 7. Docker & Local Microservice (1-Click Run)
+Run the local Astrodai Ephemeris & MCP microservice with zero local Python setup:
+```bash
+docker run -d -p 8080:8080 --name astrodai-engine tanudai/astrodai-ephemeris:latest
+```
+Or with Docker Compose:
+```bash
+docker compose up -d
+```
+Test health and capabilities:
+```bash
+curl http://localhost:8080/health
+curl -X POST http://localhost:8080/mcp -H "Content-Type: application/json" -d '{"jsonrpc": "2.0", "id": 1, "method": "tools/list", "params": {}}'
+```
 
 ---
 
